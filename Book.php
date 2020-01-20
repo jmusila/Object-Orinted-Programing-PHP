@@ -6,6 +6,15 @@ class Book {
     public $title;
     public $author;
     public $available;
+
+    // methods are functions
+    public function getPrintableTitle() {
+        $result = $this->title . ' by '. $this->author;
+        if (!$this->available){
+            $result .= 'Not Available';
+        }
+        return $result;
+    }
 }
 
 // instantiating(using) class
