@@ -36,11 +36,8 @@ class Book {
 }
 
 // instantiating(using) class
-$harry_potter = new Book();
-$harry_potter->isbn = 6576586;
-$harry_potter->title = "Harry Potter and the Magicians";
-$harry_potter->author = "John Doe";
-$harry_potter->available = 10;
+$harry_potter = new Book(6576586, "Harry Potter and the Magicians", "John Doe", 10);
+// removed the direct instantiation since we are now using our magic method
 
 if ($harry_potter->getCopy()) {
     echo 'Here is your copy of ' . $harry_potter->title. '<br>';
