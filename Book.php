@@ -7,6 +7,14 @@ class Book {
     public $author;
     public $available;
 
+    // magic method
+    public function __construct($isbn, $title, $author, $available){
+        $this->isbn = $isbn;
+        $this->title = $title;
+        $this->author = $author;
+        $this->available = $available;
+    }
+
     // methods are functions
     public function getPrintableTitle() {
         $result = $this->title . ' by '. $this->author;
