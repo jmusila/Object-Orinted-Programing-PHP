@@ -27,4 +27,26 @@ class Customer {
         $this->surname = $surname;
         $this->email = $email;
     }
+
+    // using getter to get name
+    public function getFirstName(){
+        return $this->firstname;
+    }
+
+    public function getSurname(){
+    return $this->surname;
+    }
+
+    public function getFullName(){
+        return $this->firstname . ' ' . $this->surname;
+    }
+
+    public function getEmail(){
+        return $this->email;
+    }
+
+    // using setter/mutators to set email
+    public function setEmail(string $email){
+        $this->email = $email;
+    }
 }

@@ -15,4 +15,25 @@ var_dump($first_customer);
 
 // trying to access firstname of the customer will throw an uncaught error 
 // since it is private 
-// var_dump($first_customer->firstname);
+var_dump($first_customer->firstname);
+
+/**
+ * encapsulation - accessors - mutators
+ */
+
+ /**
+  * private visibility is great to maintain internal structure of your classes 
+  * as a developer, you can change the internal structure without 
+  * affecting the external code (for example other classes that extends it - coming later)
+  * that uses it
+  * so how do we read or change these private properties or methods from outside
+  * or other classes?
+  * we can do so using getters and setters
+  * these methods are also known as accessors
+  */
+
+var_dump($first_customer->getFirstName());
+var_dump($first_customer->getSurname());
+var_dump($first_customer->getFullName());
+
+var_dump($first_customer->setEmail('me@gmail.com'));
