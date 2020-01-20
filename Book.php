@@ -47,8 +47,3 @@ class Book {
     }
 }
 
-// instantiating(using) class
-$harry_potter = new Book(6576586, "Harry Potter and the Magicians", "John Doe", 10);
-// removed the direct instantiation since we are now using our magic method
-
-echo $harry_potter;
