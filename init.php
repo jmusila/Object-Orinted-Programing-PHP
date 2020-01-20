@@ -37,3 +37,18 @@ var_dump($first_customer->getSurname());
 var_dump($first_customer->getFullName());
 
 var_dump($first_customer->setEmail('me@gmail.com'));
+
+/**
+ * static properties and methods
+ */
+
+ /**
+  * php allows us to have multiple properties and methods linked to
+  * the class itself rather than to the object
+  */
+
+// referencing using existing instance
+var_dump($first_customer::getLastId());
+
+// referencing using class name itself
+Customer::getLastId();

@@ -16,16 +16,36 @@
  */
   
 class Customer {
+
+    // making static property
+    private static $lastId = 0;
+
     private $id;
     private $firstname;
     private $surname;
     private $email;
 
     public function __construct($id, $firstname, $surname, $email){
-        $this->id = $id;
+        // $this->id = $id;
+
+        if ($id == null){
+            // accessing static property
+            $this->id = ++self::$lastId;
+        }else {
+            $this->id == $id;
+            if($id> self::$lastId){
+                self::$lastId = $id;
+            }
+        }
+
         $this->firstname = $firstname;
         $this->surname = $surname;
         $this->email = $email;
+    }
+
+    // accessor 
+    public static function getLastId(){
+        return self::$lastId;
     }
 
     // using getter to get name
