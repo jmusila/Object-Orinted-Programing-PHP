@@ -9,3 +9,9 @@ class Book {
 }
 
 // instantiating(using) class
+$harry_potter = new Book();
+$harry_potter->isbn = 6576586;
+$harry_potter->title = "Harry Potter and the Magicians";
+$harry_potter->author = "John Doe";
+$harry_potter->available = 10;
+var_dump($harry_potter);
