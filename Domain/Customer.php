@@ -73,4 +73,9 @@ class Customer extends Person {
     public function setEmail(string $email){
         $this->email = $email;
     }
+
+    public function sayHi(){
+        // getting both child and parent implementation
+        return 'Howdy ' . $this->firstname . parent::sayHi();
+    }
 }

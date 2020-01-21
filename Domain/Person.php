@@ -18,4 +18,8 @@ class Person {
     public function getSurname(){
         return $this->surname;
     }
+
+    public function sayHi(){
+        return 'Hi whats up? ' . $this->firstname;
+    }
 }

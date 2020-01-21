@@ -104,3 +104,12 @@ Customer::getLastId();
  * that are not defined as private
  * this is called 'Inheritance'
  */
+
+/**
+ * Overriding methods
+ */
+/**
+ * when we have similar methods in both parent and children and call the 
+ * method, the one defining the children will take precedence
+ */
+var_dump($first_customer->sayHi());
