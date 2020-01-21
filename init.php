@@ -4,6 +4,8 @@ use Bookstore\Domain\Book;
 use Bookstore\Domain\Customer;
 
 
+use Bookstore\Domain\Customer\Basic;
+
 // autoloader fucntion to load classes
 function autoloader($classname){
   $lastSlash = strpos($classname, '\\') + 1;
@@ -15,15 +17,11 @@ function autoloader($classname){
 
 spl_autoload_register('autoloader');
 
-// lets require classes
-// require_once __DIR__ . '/Domain/Book.php';
-// require_once __DIR__ . '/Domain/Customer.php';
-
 // instantiating(using) class
 $harry_potter = new Book(6576586, "Harry Potter and the Magicians", "John Doe", 10);
 // removed the direct instantiation since we are now using our magic method
 
-$first_customer = new Customer(1, "John", "Doe", "johndoe@gmail.com");
+$first_customer = new Basic(1, "John", "Doe", "johndoe@gmail.com");
 
 var_dump($harry_potter);
 var_dump($first_customer);
@@ -113,3 +111,14 @@ Customer::getLastId();
  * method, the one defining the children will take precedence
  */
 var_dump($first_customer->sayHi());
+
+/**
+ * abstract classes
+ */
+
+// check if if valid
+function checkIfValid(Customer, $customer, $books){
+  return $customer->getAmountToBorrow() >= count($books);
+}
+
+var_dump(checkIfValid($first_customer, $harry_potter));

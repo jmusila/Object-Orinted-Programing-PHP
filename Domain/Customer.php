@@ -17,7 +17,8 @@ namespace Bookstore\Domain;
  * 
  */
   
-class Customer extends Person {
+// abstract classes cannot be instantiated
+abstract class Customer extends Person {
 
     // making static property
     private static $lastId = 0;
@@ -46,6 +47,11 @@ class Customer extends Person {
         $this->surname = $surname;
         $this->email = $email;
     }
+
+    // abstract methods
+    abstract public function getMonthlyFee();
+    abstract public function getAmountToBorrow();
+    abstract public function getType();
 
     // accessor 
     public static function getLastId(){
