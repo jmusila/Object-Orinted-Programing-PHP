@@ -1,10 +1,13 @@
 <? php
 
 namespace Bookstore\Domain;
+use Bookstore\Utils\Unique;
 
 class Person {
-    private static $lastId = 0;
-    private $id;
+
+    use Unique;
+    // private static $lastId = 0;
+    // private $id;
     private $email;
     protected $firstname;
     protected $surname;
@@ -14,15 +17,8 @@ class Person {
 
         // parent::__construct($firstname, $surname);
 
-        if ($id == null){
-            // accessing static property
-            $this->id = ++self::$lastId;
-        }else {
-            $this->id == $id;
-            if($id> self::$lastId){
-                self::$lastId = $id;
-            }
-        }
+        //use trait
+        $this->setId($id);
 
         $this->firstname = $firstname;
         $this->surname = $surname;
@@ -31,11 +27,6 @@ class Person {
 
     public function getSurname(){
         return $this->surname;
-    }
-
-        // accessor 
-    public static function getLastId(){
-        return self::$lastId;
     }
 
     // using getter to get name

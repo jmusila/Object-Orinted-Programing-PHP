@@ -2,6 +2,7 @@
 
 use Bookstore\Domain\Book;
 use Bookstore\Domain\Customer;
+use Bookstore\Domain\Manager;
 use Bookstore\Domain\Customer\Basic;
 use Bookstore\Domain\Customer\Premium;
 use Bookstore\Domain\Payer;
@@ -149,3 +150,13 @@ function processPayment(Payer $payer, float $amount){
   $payer->pay($amount);
 }
 var_dump(processPayment($first_customer, 100.00));
+
+/**
+ * Traits
+ */
+
+var_dump($first_customer->getId());
+
+$manager = new Manager();
+echo $manager->sign();
+echo $manager->makeSign();
