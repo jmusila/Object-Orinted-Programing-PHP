@@ -13,4 +13,10 @@
 9. Interface
 10. Traits
 11. Exceptions
-12. Polymorphisim
+12. Polymorphism
+
+### How to manually test
+- [x] checkout of each branch to see a certain principle being applied
+
+### Author 
+[Jonathan Musila](https://github.com/jonathanmusila/)
