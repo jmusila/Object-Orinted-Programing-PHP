@@ -3,9 +3,21 @@
 use Bookstore\Domain\Book;
 use Bookstore\Domain\Customer;
 
+
+// autoloader fucntion to load classes
+function autoloader($classname){
+  $lastSlash = strpos($classname, '\\') + 1;
+  $classname = substr($classname, $lastSlash);
+  $directory = str_replace('\\', '/', $classname);
+  $filename = __DIR__ . '/' . $directory . '.php';
+  require_once $filename;
+}
+
+spl_autoload_register('autoloader');
+
 // lets require classes
-require_once __DIR__ . '/Domain/Book.php';
-require_once __DIR__ . '/Domain/Customer.php';
+// require_once __DIR__ . '/Domain/Book.php';
+// require_once __DIR__ . '/Domain/Customer.php';
 
 // instantiating(using) class
 $harry_potter = new Book(6576586, "Harry Potter and the Magicians", "John Doe", 10);
@@ -69,3 +81,16 @@ Customer::getLastId();
  */
 
 
+/**
+ * Autoloading
+ */
+
+/**
+ * Autoloading is a PHP feature that allows your program to search and load files 
+ * automatically given some set of predefined rules.
+ */
+
+/**
+* autoloader is a php function that gets a class name as a parameter and
+* is is expected to load a file
+*/
