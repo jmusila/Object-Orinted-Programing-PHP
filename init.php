@@ -2,9 +2,10 @@
 
 use Bookstore\Domain\Book;
 use Bookstore\Domain\Customer;
-
-
 use Bookstore\Domain\Customer\Basic;
+use Bookstore\Domain\Customer\Premium;
+use Bookstore\Domain\Payer;
+
 
 // autoloader fucntion to load classes
 function autoloader($classname){
@@ -133,3 +134,18 @@ var_dump(checkIfValid($first_customer, $harry_potter));
  */
 var_dump($first_customer->getType());
 var_dump($first_customer->pay(1000.00));
+
+/**
+ * Polymorphism allows us to work with different classes that implements the 
+ * same interface
+ */
+
+function processPayment(Payer $payer, float $amount){
+  if($payer->extentOfTaxes()){
+    return $payer->isExtentOfTaxes();
+  }else {
+    $amount *= 1.20;
+  }
+  $payer->pay($amount);
+}
+var_dump(processPayment($first_customer, 100.00));
