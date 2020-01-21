@@ -160,3 +160,12 @@ var_dump($first_customer->getId());
 $manager = new Manager();
 echo $manager->sign();
 echo $manager->makeSign();
+
+/**
+ * Exceptions
+ */
+
+/**
+ * An exception is a special object that can be used to indicate
+ * that something exceptional has happened
+ */
