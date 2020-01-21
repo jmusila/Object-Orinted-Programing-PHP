@@ -122,3 +122,14 @@ function checkIfValid(Customer, $customer, $books){
 }
 
 var_dump(checkIfValid($first_customer, $harry_potter));
+
+
+/**
+ * Interfaces 
+ */
+/**
+ * An interface is an OOP element that groups a set of function declrations 
+ * without implementing then 
+ */
+var_dump($first_customer->getType());
+var_dump($first_customer->pay(1000.00));
