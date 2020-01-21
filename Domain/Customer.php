@@ -17,18 +17,20 @@ namespace Bookstore\Domain;
  * 
  */
   
-class Customer {
+class Customer extends Person {
 
     // making static property
     private static $lastId = 0;
 
     private $id;
-    private $firstname;
-    private $surname;
+    // private $firstname;
+    // private $surname;
     private $email;
 
     public function __construct($id, $firstname, $surname, $email){
         // $this->id = $id;
+
+        parent::__construct($firstname, $surname);
 
         if ($id == null){
             // accessing static property

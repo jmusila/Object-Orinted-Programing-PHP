@@ -94,3 +94,13 @@ Customer::getLastId();
 * autoloader is a php function that gets a class name as a parameter and
 * is is expected to load a file
 */
+
+/**
+ * Inheritance
+ */
+
+/**
+ * when a class extends from another class, it gets all the properties and methods
+ * that are not defined as private
+ * this is called 'Inheritance'
+ */
