@@ -1,5 +1,7 @@
 <? php
 
+namespace Bookstore\Domain;
+
 /**
  * PRIVATE
  * The private visibility means that the properties and methods of the class can 

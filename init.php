@@ -1,8 +1,11 @@
 <? php
 
+use Bookstore\Domain\Book;
+use Bookstore\Domain\Customer;
+
 // lets require classes
-require_once __DIR__ . '/Book.php';
-require_once __DIR__ . '/Customer.php';
+require_once __DIR__ . '/Domain/Book.php';
+require_once __DIR__ . '/Domain/Customer.php';
 
 // instantiating(using) class
 $harry_potter = new Book(6576586, "Harry Potter and the Magicians", "John Doe", 10);
@@ -52,3 +55,17 @@ var_dump($first_customer::getLastId());
 
 // referencing using class name itself
 Customer::getLastId();
+
+/**
+ * namespaces 
+ */
+
+/**
+ * if you have two classes with the same name, php would not know which one is being
+ * refered to
+ * to solve this isssue, php allows us to use the namespace 'keyword'
+ * namespace acts as paths in a filesystem
+ * each section of the namespace is separated by \
+ */
+
+

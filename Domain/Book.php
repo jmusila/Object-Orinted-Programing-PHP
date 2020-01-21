@@ -1,4 +1,7 @@
 <? php
+
+namespace Bookstore\Domain;
+
 // default arguments 
 // type hinting 
 
